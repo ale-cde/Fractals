@@ -42,7 +42,8 @@ def ani(i):
     thisx=x_data[n:m]
     thisy=y_data[n:m]
     plt.plot(thisx,thisy,'.',color='#00cf18',markersize=1.5)
-a=animation.FuncAnimation(fig,ani,fargs=(),interval=1)
-#a.save('fern.gif')
-plt.show()
+a=animation.FuncAnimation(fig,ani,fargs=(),interval=1,save_count=500)
+writervideo = animation.FFMpegWriter(fps=60)
+a.save('fern.mp4',writer=writervideo)
+#plt.show()
 # %%
